@@ -1,4 +1,5 @@
-﻿// Задайте двумерный массивю Найдите элементы, у которых оба индекса четные, и замените эти элементы на их квадраты.
+﻿// Дан двумерный массив и два числа: i и j. Поменяйте в массиве столбцы с номерами i и j и выведите результат.
+
 
 void FillList(List<List<double>> mylist)
 {
@@ -19,22 +20,19 @@ void PrintList(List<List<double>> mylist)
     }
      Console.WriteLine();
 }
-double Zapolnenie (List<List<double>> mylist)
+void Swap (List<List<double>> mylist, int j1, int j2)
 {   
-    double sum = 0;
-    for(int i=0; i<5; i++)
+    double temp = 0;
+    for(int i=0; i<mylist.Count; i++)
+    for(int j=0; j<mylist[i].Count; j++)
     {
-        for(int j=0; j<5; j++)
-        if(i == j)
-        sum += mylist[i][j];
+        temp = mylist[i][j1];
+        mylist[i][j1] = mylist[i][j2];
+        mylist[i][j2] = temp;
     }
-    return sum;
 }
 List<List<double>> numbers = new List<List<double>>();
 FillList(numbers);
 PrintList(numbers); 
-Console.WriteLine(Zapolnenie(numbers)); 
+Swap(numbers, 1, 2); 
 PrintList(numbers); 
-
-
-

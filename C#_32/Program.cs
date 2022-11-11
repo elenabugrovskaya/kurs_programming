@@ -1,4 +1,5 @@
-﻿// Задайте двумерный массивю Найдите элементы, у которых оба индекса четные, и замените эти элементы на их квадраты.
+﻿// По данным числам n x m заполните двумерный массив размером n x m " змейкой", как показано в примере. Вводятся 2 числа n x m.
+// Чтобы сделать такой большой отступ можно использовать \t.
 
 void FillList(List<List<double>> mylist)
 {
@@ -14,27 +15,30 @@ void PrintList(List<List<double>> mylist)
     for(int i=0; i<mylist.Count; i++)
     {
         for(int j=0; j<mylist.Count; j++)
-        Console.Write(mylist[i][j] + " ");
+        Console.Write(mylist[i][j] + "\t");
         Console.WriteLine();
     }
      Console.WriteLine();
 }
-double Zapolnenie (List<List<double>> mylist)
+void Zapolnenie (List<List<double>> mylist)
 {   
-    double sum = 0;
+    double count = 1;
     for(int i=0; i<5; i++)
     {
         for(int j=0; j<5; j++)
-        if(i == j)
-        sum += mylist[i][j];
+        {
+            mylist[i][j] = count;
+            count++;
     }
-    return sum;
+        }
+        
+  
 }
+
 List<List<double>> numbers = new List<List<double>>();
 FillList(numbers);
 PrintList(numbers); 
-Console.WriteLine(Zapolnenie(numbers)); 
+Zapolnenie(numbers); 
 PrintList(numbers); 
-
 
 
