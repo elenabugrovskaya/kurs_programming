@@ -1,11 +1,12 @@
-﻿// Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
-// N = 5 -> "5, 4, 3, 2, 1"
-// N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+﻿// Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
+// A = 2, B = 3 -> 8
 
-string FillNumbers (int n)
+int  Stepen (int A, int B)
 {
-    if (n == 1) return (n).ToString();
+    if (B == 0) return 1;
+    if (B == 1) return A;
     else 
-        return (n + " " + FillNumbers (n-1));//m + " " + FillNumbers(m+1, n));
+    B--;
+    return (A*Stepen(A, B));
 }
-Console.WriteLine(FillNumbers(5));
+Console.WriteLine(Stepen(2, 3));
