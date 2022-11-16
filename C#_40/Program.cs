@@ -7,12 +7,15 @@ string FindDictionary (int n)
     for (int i=0; i<n; i++)
     {
         Console.Write("Введите пары слов: ");
-        string[] names = Console.ReadLine().split();
+        string[] names = Console.ReadLine().Split();
         dict.Add(names[0], names[1]);
         dict.Add(names[1], names[0]);
     }
     Console.Write ("Введите слово из коллекции: ");
-    int kol = int.Parse(Console.ReadLine());
-    Console.WriteLine(FindDictionary(kol));
+    string choose_name = Console.ReadLine();
+    return dict [choose_name];
 }
-Console.WriteLine(SumNumbers(4, 8));
+Console.Write("Введите количество слов: ");
+int kol = int.Parse(Console.ReadLine());
+Console.WriteLine(FindDictionary(kol));
+
